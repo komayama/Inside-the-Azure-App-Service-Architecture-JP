@@ -67,3 +67,7 @@ API Contorollers は、App Service Geo-マスター の拡張機能としてお�
 Azure App Service は、アプリケーションへの FTP アクセスをサポートしています。アプリケーションのコンテンツは Azure Storage blobs と ファイルサーバによってマッピングされているため、App Service は、FTP 機能を公開する Publisher ロールを持っています。Publisher ロールにより、お客様は FTP を使用しアプリケーションコンテンツやログへアクセスすることができます。
 
 アプリケーションのデプロイは FTP 以外にも存在しているため注意する必要がございます。一般的なデプロイ方法は Web Deploy （Visual Studio から）もしくはVisual Studio Release Manager や GitHub のような継続的デプロイがサポートされています。
+
+## SQL Azure
+
+各 App Service スケールユニットは、アプリケーションのメタデータを永続化するために Azure SQL Database を使用します。スケール単位に割り当てられている各アプリケーションには、SQL データベース内にて表現されています。SQL データベースはに関するランタイム情報を保持するためにも使用されます。

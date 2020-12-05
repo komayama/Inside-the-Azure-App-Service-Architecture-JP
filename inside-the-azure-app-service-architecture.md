@@ -62,3 +62,8 @@ App Service スケールユニットは、事前にプロビジョニングさ�
 
 API Contorollers は、App Service Geo-マスター の拡張機能としております。Geo-マスター は、すべての スケールユニットにわたる App Servie アプリケーションを認識しており、アプリケーションに影響を与える管理操作を実際に実行しているのが、API コントローラーになります。Geo-マスター は、API Controllers を返して API の実行をスケールユニットに委任します。例えば、Geo-マスター が API を呼び出して新しいアプリケーションを作成すると、API Controller がスケールユニットにてアプリケーションを作成するために必要な手順を行います。アプリケーションのリセットを Azure Portal を使用したときに、アプリケーションに現在割り当てられている Web Worker を再起動するように通知を行うのが、API Contoroller です。
 
+## Publisher
+
+Azure App Service は、アプリケーションへの FTP アクセスをサポートしています。アプリケーションのコンテンツは Azure Storage blobs と ファイルサーバによってマッピングされているため、App Service は、FTP 機能を公開する Publisher ロールを持っています。Publisher ロールにより、お客様は FTP を使用しアプリケーションコンテンツやログへアクセスすることができます。
+
+アプリケーションのデプロイは FTP 以外にも存在しているため注意する必要がございます。一般的なデプロイ方法は Web Deploy （Visual Studio から）もしくはVisual Studio Release Manager や GitHub のような継続的デプロイがサポートされています。

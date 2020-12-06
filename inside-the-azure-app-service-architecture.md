@@ -179,3 +179,11 @@ awesomewebapp.azurewebsites.net の出力の調査は以下の通りです。
 図 3: Azure Portal にて、App Service アプリケーションのアウトバウンド IP アドレスを確認
 
 インバウンド IP とアウトバウンド IP の専用のセットを探している場合には、ネットワークから完全に分離された専用の App Service Envrionment を使用して調べることができます。（bit.ly/2VKdaog） 
+
+## IP と SNI SSL
+
+App Service は、IP ベースの SSL 証明書をサポートしています。IP-SSL を使用する場合、App Service はインバウンド HTTP トラフィック専用の IP アドレスをアプリケーションに割り当てます。
+
+その他の Azure 専用 IP アドレスとは異なり、IP-SSL を介した App Service の IP アドレスは、使用することを選択した場合のみに割り当てられます。IP アドレスは所有していないため、IP-SSL を削除すると IP アドレスが失われる可能性があります。（他のアプリケーションに割り当てられる可能性があるため）
+
+また、App Service は、SNI SSL もサポートしており、専用の IP アドレスを必要とせず、最新のブラウザでサポートされております。

@@ -1,4 +1,13 @@
-# Azure App Service アーキテクチャの内部
+## はじめに
+
+本記事は、[Microsoft Azure Tech Advent Calendar 2020](https://qiita.com/advent-calendar/2020/microsoft-azure-tech) の投稿です。今回は、MSDN マガジン の2017 年 2 月に投稿されました Azure App Service の基本的なアーキテクチャを公開している [Inside the Azure App Service Architecture](https://docs.microsoft.com/ja-jp/archive/msdn-magazine/2017/february/azure-inside-the-azure-app-service-architecture) を日本語訳しました。翻訳するにあたって、著者である [Yochay Kiriaty](https://twitter.com/yochayk) さんへは許諾を頂いております。
+
+注意事項：
+
+* Azure App Service の基本的なアーキテクチャの解説をしておりますが、2017 年の記事であるため内容が変更されている場合がございます。
+* ある程度の説明を記載しておりますが、私は、翻訳のプロではないので、用語や不適切な箇所があると思います。間違いがありましたら、修正のコメントや編集リクエストをいただけますと助かります。
+
+## Azure App Service アーキテクチャの内部
 
 Azure App Service は優れた Platform as a Service (PaaS) で開発者が Web、モバイルそして API アプリケーションを構築するためにアプリケーションプラットフォームを提供しております。シンプルなマーケティングやデジタル展開するアプリケーションから、拡張性がある e-コマースソリューションやハイパースケールでカスタマイズ可能なアプリケーションまで及びます。
 

@@ -1,3 +1,4 @@
+# [日本語訳] Inside the Azure App Service Architecture
 ## はじめに
 
 本記事は、[Microsoft Azure Tech Advent Calendar 2020](https://qiita.com/advent-calendar/2020/microsoft-azure-tech) の投稿です。今回は、MSDN マガジン の2017 年 2 月に投稿されました Azure App Service の基本的なアーキテクチャを公開している [Inside the Azure App Service Architecture](https://docs.microsoft.com/ja-jp/archive/msdn-magazine/2017/february/azure-inside-the-azure-app-service-architecture) を日本語訳しました。翻訳するにあたって、著者である [Yochay Kiriaty](https://twitter.com/yochayk) さんへは許諾を頂いております。

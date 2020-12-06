@@ -165,7 +165,7 @@ App Service アプリケーションは、HTTP（ポート 80）と HTTPS（ポ�
 
 awesomewebapp.azurewebsites.net の出力の調査は以下の通りです。
 
-* #1 行目は、awseomwebapp.azurewebsites.netのnslookupクエリ解決を実行します。
-* #5 行目は、awseomwebappアプリを実行しているスケールユニットのドメイン名を示しています。App Service スケールユニットが Azure Cloud Service によって（cloudapp.net サフィックス）デプロイされていることが分かります。WAWS は、Windows Azure Web Site の略です。（Azure がまだ Windows と呼ばれていたときに、App Service の元の名前です。）
-* #6 行目は、スケールユニットの VIP を示しております。waws-prod-bay-001（＃5 行目）でホストおよび実行されているすべてのアプリケーションは、指定されたパブリックVIPでアドレス指定できます。
+* #1 行目は、awseomwebapp.azurewebsites.net の nslookup クエリ解決を実行します。
+* #5 行目は、awseomwebapp アプリを実行しているスケールユニットのドメイン名を示しています。App Service スケールユニットが Azure Cloud Service によって（cloudapp.net サフィックス）デプロイされていることが分かります。WAWS は、Windows Azure Web Site の略です。（Azure がまだ Windows と呼ばれていたときに、App Service の元の名前です。）
+* #6 行目は、スケールユニットの VIP を示しております。waws-prod-bay-001（＃5 行目）でホストおよび実行されているすべてのアプリケーションは、指定されたパブリック VIP でアドレス指定できます。
 * #7 行目は、同じ IP アドレスにマッピングされたドメインエイリアスを示しています。

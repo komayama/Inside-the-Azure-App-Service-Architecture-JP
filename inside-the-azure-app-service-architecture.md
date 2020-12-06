@@ -148,3 +148,24 @@ App Service スケールユニットは、Could Service 上にてデプロイさ
 スケールユニットは、世界に公開されている単一の仮想 IP（VIP）アドレスを持っています。スケールユニット単位に割り当てられたすべてのアプリケーションはこの VIP を通じてサービスを提供しております。VIP は、App Service スケールユニットがデプロイされている Cloud Service です。
 
 App Service アプリケーションは、HTTP（ポート 80）と HTTPS（ポート 443）トラフィックのみを提供しております。各 App Service アプリケーションは、azurewebsites.net ドメインに対するデフォルトの組み込み HTTPS がサポートされています。App Service は、Server Name Indication（SNI）証明書と IP ベースの Secure Sockets Layer （SSL）証明書の両方をサポートしています。IP ベースの SSL の場合、アプリケーションには、Cloud Service へデプロイされ関連付けられている受信専用の IP アドレスが割り当てられます。注意：FrontEnd は、すべてのタイプの証明書に対するアプリケーションの HTTPS 要求の SSL 接続を終了します。そして、FrontEnd は、指定されたアプリケーションの Worker へリクエストを転送します。
+
+## パブリック VIP
+
+デフォルトでは、すべての受信 HTTP トラフィックに対して、単一のパブリック VIP があります。すべてのアプリケーションは、単一の VIP にアドレスを指定できます。App Service 上にアプリケーションがある場合は、（Windows または、PowerShell コンソールから）nslookup コマンド実行して結果を確認します。次に例を示します。
+
+```XML
+#1 PS C:\> nslookup awesomewebapp.azurewebsites.net
+#2 Server:  UnKnown
+#3 Address:  10.221.0.3
+#4 Non-authoritative answer:
+#5 Name:    waws-prod-bay-001.cloudapp.net
+#6 Address:  168.62.20.37
+#7 Aliases:  awesomewebapp.azurewebsites.net
+```
+
+awesomewebapp.azurewebsites.net の出力の調査は以下の通りです。
+
+* #1 行目は、awseomwebapp.azurewebsites.netのnslookupクエリ解決を実行します。
+* #5 行目は、awseomwebappアプリを実行しているスケールユニットのドメイン名を示しています。App Service スケールユニットが Azure Cloud Service によって（cloudapp.net サフィックス）デプロイされていることが分かります。WAWS は、Windows Azure Web Site の略です。（Azure がまだ Windows と呼ばれていたときに、App Service の元の名前です。）
+* #6 行目は、スケールユニットの VIP を示しております。waws-prod-bay-001（＃5 行目）でホストおよび実行されているすべてのアプリケーションは、指定されたパブリックVIPでアドレス指定できます。
+* #7 行目は、同じ IP アドレスにマッピングされたドメインエイリアスを示しています。
